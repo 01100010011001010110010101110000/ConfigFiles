@@ -1,0 +1,34 @@
+set shell=/bin/zsh
+let $PYTHONPATH='/usr/lib/python3.5/site-packages'
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'sjl/gundo.vim'
+
+filetype plugin indent on
+inoremap jj <ESC>
+let mapleader = "\<SPACE>"
+nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>u :GundoToggle<CR>
+nnoremap <buffer> <F9> :exec '!python2' shellescape(@%, 1)<cr>
+syntax on
+set t_Co=256
+set laststatus=2
+set encoding=utf-8
+set nospell
+set tabstop=4
+set softtabstop=4
+set expandtab
+set cursorline
+set wildmenu
+set showmatch
+set incsearch
+set hlsearch
+set number
